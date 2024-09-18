@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -17,7 +18,6 @@ public class CricketMatchesAssignment {
 
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
-
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 StringBuilder response = new StringBuilder();
                 String line;
@@ -36,7 +36,6 @@ public class CricketMatchesAssignment {
                 for (JsonElement matchElement : matchesArray) {
                     JsonObject matchObject = matchElement.getAsJsonObject();
 
-                    // Retrieve scores and team names
                     String team1ScoreStr = matchObject.get("t1s").getAsString().split("/")[0];
                     String team2ScoreStr = matchObject.get("t2s").getAsString().split("/")[0];
                     int team1Score = Integer.parseInt(team1ScoreStr);
@@ -59,8 +58,7 @@ public class CricketMatchesAssignment {
                     }
                 }
 
-                // Print the results
-                System.out.println("API Response: " + response.toString());
+                // System.out.println("API Response: \n" + response.toString());
 
                 System.out.println("Highest Score: " + highestScore + " by " + teamWithHighestScore);
                 System.out.println("Number of Matches with total 300 Plus Score: " + matchesWith300PlusScore);
