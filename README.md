@@ -26,4 +26,9 @@ Console Output: Display the extracted information and computed statistics in a r
 API Errors: Handle errors that may occur during the API request (e.g., network issues, invalid response).
 JSON Parsing Errors: Handle potential issues that may arise while parsing the JSON data.
 
+output:-
+
+![Screenshot 2024-09-18 134037](https://github.com/user-attachments/assets/6c6dc6bc-b3c4-483a-b299-91906378d394)
+
+
  
