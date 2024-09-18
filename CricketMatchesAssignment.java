@@ -10,7 +10,6 @@ import com.google.gson.JsonParser;
 public class CricketMatchesAssignment {
     public static void main(String[] args) {
         try {
-            // Send GET request to the API
             URL url = new URL("https://api.cuvora.com/car/partner/cricket-data");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
@@ -18,7 +17,7 @@ public class CricketMatchesAssignment {
 
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
-                // Read the response from the API
+
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 StringBuilder response = new StringBuilder();
                 String line;
@@ -27,11 +26,9 @@ public class CricketMatchesAssignment {
                 }
                 reader.close();
 
-                // Parse the JSON response
                 JsonObject jsonResponse = JsonParser.parseString(response.toString()).getAsJsonObject();
                 JsonArray matchesArray = jsonResponse.getAsJsonArray("data");
 
-                // Initialize variables for computations
                 int highestScore = 0;
                 String teamWithHighestScore = "";
                 int matchesWith300PlusScore = 0;
@@ -47,7 +44,6 @@ public class CricketMatchesAssignment {
                     String team1Name = matchObject.get("t1").getAsString();
                     String team2Name = matchObject.get("t2").getAsString();
 
-                    // Update highest score and team
                     if (team1Score > highestScore) {
                         highestScore = team1Score;
                         teamWithHighestScore = team1Name;
@@ -58,7 +54,6 @@ public class CricketMatchesAssignment {
                         teamWithHighestScore = team2Name;
                     }
 
-                    // Count matches with a total score of 300 or more
                     if (team1Score + team2Score >= 300) {
                         matchesWith300PlusScore++;
                     }
