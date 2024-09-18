@@ -58,7 +58,7 @@ public class CricketMatchesAssignment {
                     }
                 }
 
-                System.out.println(response.toString());
+                // System.out.println(response.toString());
 
                 System.out.println("Highest Score: " + highestScore + " by " + teamWithHighestScore);
                 System.out.println("Number of Matches with total 300 Plus Score: " + matchesWith300PlusScore);
