@@ -1,0 +1,21 @@
+[
+    {
+        "id": "1",
+        "dateTimeGMT": "2024-07-18T12:00:00Z",
+        "matchType": "ODI",
+        "status": "Team A won by 10 runs",
+        "ms": "Result",
+        "t1": "Team A",
+        "t2": "Team B",
+        "t1s": 280,
+        "t2s": 270,
+        "t1img": "team-a-image-url",
+        "t2img": "team-b-image-url"
+    }
+
+    
+]
+
+
+  
+
